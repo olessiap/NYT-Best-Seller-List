@@ -18,35 +18,46 @@ let showBooks = function() {
 
     const renderBookCard = book => {
         //create DOM elements
-        const div = document.createElement("div");
+        const bookCard = document.createElement("div");
+        const bookContent = document.createElement('div');
         const rank = document.createElement("h1");
         const img = document.createElement("img");
         const weeks = document.createElement("p");
         const title = document.createElement("h4");
         const author = document.createElement("p");
-        const buyButton = document.createElement("button");
-
+        const description = document.createElement("p");
+        const buyButton = document.createElement("input");
 
         //append to DOM
         const list = document.querySelector(".list");
-        list.append(div);
-        div.append(rank);
-        div.append(img);
-        div.append(weeks);
-        div.append(title);
-        div.append(author);
-        div.append(buyButton);
-
+        list.append(bookCard);
+        bookCard.append(bookContent);
+        bookContent.append(rank);
+        bookContent.append(img);
+        bookContent.append(weeks);
+        bookContent.append(title);
+        bookContent.append(author);
+        bookContent.append(description);
+        bookContent.append(buyButton);
 
         //set data and attributes
-        div.setAttribute('class', 'bookCard');
+        bookCard.setAttribute('class', 'bookCard');
+        bookContent.setAttribute('class', 'bookContent');
         rank.innerHTML = book.rank;
+        rank.setAttribute('class', 'rank');
         img.setAttribute('src', book.book_image);
         img.setAttribute('class', 'book-image');
         weeks.innerHTML = book.weeks_on_list + " WEEKS ON THE LIST";
+        weeks.setAttribute('class', 'weeks');
         title.innerHTML = book.title;
+        title.setAttribute("class", 'title');
         author.innerHTML = "by " + book.author;
-        buyButton.innerHTML = "BUY"
+        author.setAttribute("class", "author");
+        description.innerHTML = book.description;
+        description.setAttribute("class", "description");
+        buyButton.setAttribute("type", "button");
+        buyButton.value = "BUY";
+        buyButton.setAttribute("class", "buyButton");
     }
 }
 
