@@ -27,6 +27,7 @@ let showBooks = function() {
         const author = document.createElement("p");
         const description = document.createElement("p");
         const buyButton = document.createElement("input");
+        
 
         //append to DOM
         const list = document.querySelector(".list");
@@ -39,6 +40,7 @@ let showBooks = function() {
         bookContent.append(author);
         bookContent.append(description);
         bookContent.append(buyButton);
+        
 
         //set data and attributes
         bookCard.setAttribute('class', 'bookCard');
@@ -58,6 +60,11 @@ let showBooks = function() {
         buyButton.setAttribute("type", "button");
         buyButton.value = "BUY";
         buyButton.setAttribute("class", "buyButton");
+       // buyButton.setAttribute("onclick", location.href=book.amazon_product_url);
+
+       buyButton.addEventListener("click", function (event) {
+           window.open(book.amazon_product_url, '_blank');
+       });
     }
 }
 
