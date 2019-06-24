@@ -1,8 +1,16 @@
-body{
-    background: lightcyan;
+.list {
+    display:flex;
+    flex-wrap: wrap;
 }
 
-.card {
-    border: 1px solid red;
-    width:600px;
+.bookCard {
+    width:200px;
+    height: 360px;
+    border-right:1px solid lightgrey;
+    border-bottom:1px solid lightgrey;
+}
+
+.book-image {
+    width:75px;
+    height:110px;
 }
